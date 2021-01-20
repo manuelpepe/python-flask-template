@@ -1,0 +1,15 @@
+[Unit]
+Description=uWSGI instance to serve data integrations info
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/{{cookiecutter.app_name}}
+Environment="PATH=/var/www/{{cookiecutter.app_name}}/venv/bin"
+Environment="FLASK_ENV=production"
+Environment="FLASK_SECRET_KEY=YOURKEYHERE"
+ExecStart=/var/www/{{cookiecutter.app_name}}/venv/bin/uwsgi --ini {{cookiecutter.app_name}}.ini
+
+[Install]
+WantedBy=multi-user.target

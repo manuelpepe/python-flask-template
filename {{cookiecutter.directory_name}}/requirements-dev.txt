@@ -1,0 +1,5 @@
+pytest
+pytest-cov
+WebTest
+pre-commit
+black

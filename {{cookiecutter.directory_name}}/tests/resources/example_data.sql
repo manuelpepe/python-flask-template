@@ -1,0 +1,1 @@
+INSERT INTO person (id, name) VALUES (1, "John"), (2, "Jane"), (3, "James"), (4, "Judy");

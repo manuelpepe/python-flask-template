@@ -1,0 +1,11 @@
+server {
+    listen 3001 ssl;
+
+    access_log /var/log/nginx/{{cookiecutter.app_name}}-access.log;
+    error_log /var/log/nginx/{{cookiecutter.app_name}}-error.log error;
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:///var/www/{{cookiecutter.app_name}}/{{cookiecutter.app_name}}.sock;
+    }
+}
